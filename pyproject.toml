@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "disorder-transport"
+version = "0.1.0"
+description = "Three-dimensional split-step Fourier simulations of quantum wavepacket transport in structured potentials"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "DisorderTransport contributors"}]
+dependencies = ["numpy>=1.24", "scipy>=1.10"]
+
+[project.optional-dependencies]
+app = ["streamlit>=1.32", "streamlit-drawable-canvas>=0.9", "plotly>=5.18", "pillow>=10"]
+test = ["pytest>=7.4"]
+
+[tool.setuptools]
+py-modules = ["DisorderTransport"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
